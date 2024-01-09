@@ -14,7 +14,10 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@nxsetup/uikit": ["libs/uikit/src/index.ts"],
+      "@nxsetup/uikit/server": ["libs/uikit/src/server.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

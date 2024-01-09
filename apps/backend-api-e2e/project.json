@@ -1,0 +1,26 @@
+{
+  "name": "backend-api-e2e",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/backend-api-e2e/src",
+  "targets": {
+    "e2e": {
+      "executor": "@nx/cypress:cypress",
+      "options": {
+        "cypressConfig": "apps/backend-api-e2e/cypress.config.ts",
+        "testingType": "e2e",
+        "devServerTarget": "backend-api:serve"
+      },
+      "configurations": {
+        "production": {
+          "devServerTarget": "backend-api:serve:production"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "outputs": ["{options.outputFile}"]
+    }
+  },
+  "tags": [],
+  "implicitDependencies": ["backend-api"]
+}
